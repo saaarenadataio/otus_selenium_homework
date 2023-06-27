@@ -9,6 +9,8 @@ def pytest_addoption(parser):
     parser.addoption("--headless", action="store_true")
 
 
+
+
 @pytest.fixture()
 def driver(request):
     browser_name = request.config.getoption("--browser")
@@ -25,7 +27,7 @@ def driver(request):
     _driver.maximize_window()
 
     _driver.get(url)
-    driver.url = url
+    _driver.url = url
 
     yield _driver
 
